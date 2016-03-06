@@ -1,0 +1,272 @@
+//General SASS
+
+body{
+	background-color: #003567;
+	overflow: hidden;
+}
+
+.clear{
+    clear: both;
+}
+
+
+.standing_bright{
+	width: 80%;
+	padding: 5vh 0 0 0;
+	margin: 0vh auto;
+	height: 85vh;
+
+    .logo_image{
+        position: relative;
+        top: 0;
+        margin-top: 30px;
+        margin-left: -24px;
+        
+        .logo_position{
+            position: absolute;
+            bottom: -75px;
+            
+            video{
+                min-width: 100px;
+                float: left;
+            }
+
+            h1{
+                float: left;
+                margin: 41px 0px 0px 0px;
+                color: white;
+            }
+        }
+    }
+}
+
+
+//Tabbed SASS
+md-content{
+    border-radius: 10px;
+
+    md-tabs{
+        height: 5vh;
+        min-height: 50px;
+
+        md-tabs-wrapper{
+            min-height: 50px;
+            height: 100%;   
+
+            md-tab{
+
+            }
+        }
+
+        md-tabs-canvas{
+            background: transparent;
+
+            md-pagination-wrapper{
+                left: auto!important;
+                right: 0!important;
+                height: 100%;
+                background: white;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+
+                md-tab-item{
+                    height: 100%;
+                    
+                    span{
+                        color: black;
+                        font-weight: bold;
+                    }
+                    
+                    .md-ripple-container{
+                        color: rgb(63,81,181);
+                        font-weight: bold;
+                    }
+
+                    md-tabs md-ink-bar{
+                        color: black!important;
+                        background: black!important;                    
+                    }
+                }
+            }
+        }
+    }
+}
+
+md-content.md-default-theme, md-content {
+    color: rgba(0,0,0,0.87);
+    background-color: transparent!important;
+}
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: #ddbf7a!important;
+    background: #ddbf7a!important; 
+}
+
+md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+    min-height: 82vh;
+}
+
+
+
+
+//Inner Tab SASS
+md-tabs-content-wrapper{
+    
+    md-tab-content{
+
+        div{
+
+            md-content{
+
+                .demo_video{
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    background: white;
+                    position: relative;                
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+//DEMO Tab SASS
+
+iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+
+//Process Tab SASS
+
+.blue_dropdown{
+    position: relative;
+    width: 25%;
+    float:left;
+    height: 100%;
+
+    .blue_animate1,
+    .blue_animate2,
+    .blue_animate3,
+    .blue_animate4 {
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+        background-color: #399cff;
+        height:0px;
+
+
+
+        
+    }
+
+    .blue_innards{
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        z-index: 100;        
+        position: absolute;
+        transform: translate(-50%, -50%);
+
+        h1, p{
+            text-align: center;
+            width: 100%;
+            color: white;
+        }
+
+        img{
+            margin: 50px;
+            width: 70%;
+            margin: 0 15%;
+        }
+
+        p{
+            margin-top: -40px;
+            font-weight: bold;
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+}    
+
+
+//CONTACT Tab SASS
+
+.contact_form{
+    width: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    form{
+
+        md-input-container{
+            width: 426px;
+            margin: 20px 10px;
+            float: left;
+        }
+
+        .md-block{
+            width: 876px !important;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+footer{
+	min-height: 50px;
+    width: 100%;
+    color: white;
+}
+
+
+.inputdemoBasicUsage .md-datepicker-button {
+  width: 36px; }
+
+
+.animations22 {
+    -webkit-animation: rainbow_decline 1s; /* Safari 4+ */
+    -moz-animation:    rainbow_decline 1s; /* Fx 5+ */
+    -o-animation:      rainbow_decline 1s; /* Opera 12+ */
+    animation:         rainbow_decline 1s; /* IE 10+, Fx 29+ */
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;  
+}
+
+@-webkit-keyframes rainbow_decline {
+    0%   { height: 0px; }
+    100% { height: 100%; }
+}
+    
+@-moz-keyframes rainbow_decline {
+    0%   { height: 0px; }
+    100% { height: 100%; }
+}
+    
+@-o-keyframes rainbow_decline {
+    0%   { height: 0px; }
+    100% { height: 100%; }
+}
+    
+@keyframes rainbow_decline {
+    0%   { height: 0px; }
+    100% { height: 100%; }
+}

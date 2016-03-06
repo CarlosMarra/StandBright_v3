@@ -1,0 +1,181 @@
+<html lang="en" >
+<head>
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+</head>
+<body ng-app="BlankApp" ng-cloak>
+<div class='standing_bright' ng-cloak>
+	<div class='logo_image'>
+		<div class="logo_position">
+			<video class="flameon" autoplay="" muted="" loop="">
+	            <source src="flame.mp4" type="video/mp4">
+	        </video>
+	        <h1>STAND BRIGHT STUDIOS</h1>		
+		</div>
+	</div>
+  <md-content>
+    <md-tabs>
+      <md-tab label="DEMO">
+        <md-content>
+			<div class='demo_video'>
+	          <iframe src="https://player.vimeo.com/video/128739721" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+        </md-content>
+      </md-tab>
+      <md-tab class='process' label="PROCESS">
+        <md-content>
+			<div class='demo_video'>
+				<div class="blue_dropdown">
+					<div class="blue_animate1" style='border-top-left-radius: 10px; border-bottom-left-radius: 10px'></div>
+					<div class="blue_innards">							
+						<h1>CONCEPT</h1>
+						<img src="concept.png" alt="">	
+						<p>Have an idea? Great! Create a script.</p>
+					</div>								
+				</div>						
+
+				<div class="blue_dropdown">
+					<div class="blue_animate2"></div>
+					<div class="blue_innards">
+						<h1>STYLE</h1>
+						<img src="style.png" alt="">	
+						<p>A range of styles are sent based on your preference.</p>
+					</div>
+				</div>						
+				
+				<div class="blue_dropdown">
+					<div class="blue_animate3"></div>
+					<div class="blue_innards">
+						<h1>STORYBOARD</h1>
+						<img src="storyboard.png" alt="">	
+						<p>Creating storyboards is the best way to visually plan out the entire video.</p>
+					</div>
+				</div>						
+				
+				<div class="blue_dropdown">
+					<div class="blue_animate4" style='border-bottom-right-radius: 10px'></div>
+					<div class="blue_innards">
+						<h1>PRODUCTION</h1>
+						<img src="production.png" alt="">	
+						<p>Once the previous steps are approved, we take action.</p>
+					</div>
+				</div>						
+			</div>
+        </md-content>
+      </md-tab>
+      <md-tab label="CONTACT">
+        <md-content>
+			<div class='demo_video'>
+
+				<div class="contact_form">
+					
+					<form action="">
+
+					
+
+						<md-input-container>
+					        <label>Client Name</label>
+					        <input required name="clientName"  minlength="2" ng-model="project.clientName">
+					        <div ng-messages="projectForm.clientName.$error">
+					          <div ng-message="required">A client name with at least 2 character is required.</div>
+					        </div>
+						</md-input-container>
+
+						<md-input-container>
+					        <label>Company Name</label>
+					        <input required name="compnayName"  minlength="2" ng-model="project.compnayName">
+					        <div ng-messages="projectForm.companyName.$error">
+					          <div ng-message="required">A company name with at least 2 character is required.</div>
+					        </div>				  
+						</md-input-container>
+
+						<md-input-container>
+					        <label>Email</label>
+					        <input required name="email" ng-model="project.email" ng-pattern="/^.+@.+\..+$/">
+					        <div ng-messages="projectForm.email.$error">
+					          <div ng-message="required">A vaild email is required.</div>
+					        </div>			  
+						</md-input-container>
+
+						<md-input-container>
+					        <label>Budget (~USD)</label>
+					        <input required name="budget" ng-model="project.budget" type="number" step="0.01">
+					        <div ng-messages="projectForm.budget.$error">
+					          <div ng-message="required">A vaild estimate is required.</div>
+					        </div>
+						</md-input-container>
+				        
+				        <md-input-container class="md-block">
+					        <label>Comments</label>
+					        <textarea required name="comments" maxlength="500" rows="6" md-select-on-focus ng-model="project.comments"></textarea>
+					        <div ng-messages="projectForm.comments.$error">
+					          <div ng-message="required">A Comment is required and appreciated if detailed.</div>
+					        </div>
+				        </md-input-container>
+					      
+					    <p style='width: 100%; text-align: center;'><md-button class="md-raised md-primary">SUBMIT</md-button></p>
+
+					</form>
+				
+				</div>			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>		
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+
+<footer>
+	
+REAOSNS
+
+</footer>
+
+</div>
+
+
+  
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <script src="script.js"></script>
+  
+
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+
+  </script>
+  
+</body>
+</html>
