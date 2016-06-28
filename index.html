@@ -1,190 +1,242 @@
-<html lang="en" >
-<head>
-  <!-- Angular Material style sheet -->
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-  <link rel="stylesheet" href="sass_css_js/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-</head>
-<body ng-app="BlankApp" ng-cloak>
-<div class='standing_bright' ng-cloak>
-	<div class='logo_image'>
-		<div class="logo_position">
-			<video class="flameon" autoplay="" muted="" loop="">
-	            <source src="images_videos/flame.mp4" type="video/mp4">
-	        </video>
-	        <h1>STAND BRIGHT STUDIOS</h1>		
-		</div>
-	</div>
-  <md-content>
-    <md-tabs>
-      <md-tab label="DEMO">
-        <md-content>
-			<div class='demo_video'>
-	          <iframe src="https://player.vimeo.com/video/128739721" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>
-        </md-content>
-      </md-tab>
-
-      <md-tab label="PRODUCTION">
-        <md-content>
-			<div class='demo_video'>
-	          <iframe src="https://player.vimeo.com/video/128739721" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>
-        </md-content>
-      </md-tab>
-
-      <md-tab class='process' label="PROCESS">
-        <md-content>
-			<div class='demo_video'>
-				<div class="blue_dropdown">
-					<div class="blue_animate1" style='border-top-left-radius: 10px; border-bottom-left-radius: 10px'></div>
-					<div class="blue_innards">							
-						<h1>CONCEPT</h1>
-						<img src="images_videos/concept.png" alt="">	
-						<p>Have an idea? Great! Create a script.</p>
-					</div>								
-				</div>						
-
-				<div class="blue_dropdown">
-					<div class="blue_animate2"></div>
-					<div class="blue_innards">
-						<h1>STYLE</h1>
-						<img src="images_videos/style.png" alt="">	
-						<p>A range of styles are sent based on your preference.</p>
-					</div>
-				</div>						
-				
-				<div class="blue_dropdown">
-					<div class="blue_animate3"></div>
-					<div class="blue_innards">
-						<h1>STORYBOARD</h1>
-						<img src="images_videos/storyboard.png" alt="">	
-						<p>Creating storyboards is the best way to visually plan out the entire video.</p>
-					</div>
-				</div>						
-				
-				<div class="blue_dropdown">
-					<div class="blue_animate4" style='border-bottom-right-radius: 10px'></div>
-					<div class="blue_innards">
-						<h1>PRODUCTION</h1>
-						<img src="images_videos/production.png" alt="">	
-						<p>Once the previous steps are approved, we take action.</p>
-					</div>
-				</div>						
-			</div>
-        </md-content>
-      </md-tab>
-      <md-tab label="CONTACT">
-        <md-content>
-			<div class='demo_video'>
-
-				<div class="contact_form">
-					
-					<form action="">
-
-					
-
-						<md-input-container>
-					        <label>Client Name</label>
-					        <input required name="clientName"  minlength="2" ng-model="project.clientName">
-					        <div ng-messages="projectForm.clientName.$error">
-					          <div ng-message="required">A client name with at least 2 character is required.</div>
-					        </div>
-						</md-input-container>
-
-						<md-input-container>
-					        <label>Company Name</label>
-					        <input required name="compnayName"  minlength="2" ng-model="project.compnayName">
-					        <div ng-messages="projectForm.companyName.$error">
-					          <div ng-message="required">A company name with at least 2 character is required.</div>
-					        </div>				  
-						</md-input-container>
-
-						<md-input-container>
-					        <label>Email</label>
-					        <input required name="email" ng-model="project.email" ng-pattern="/^.+@.+\..+$/">
-					        <div ng-messages="projectForm.email.$error">
-					          <div ng-message="required">A vaild email is required.</div>
-					        </div>			  
-						</md-input-container>
-
-						<md-input-container>
-					        <label>Budget (~USD)</label>
-					        <input required name="budget" ng-model="project.budget" type="number" step="0.01">
-					        <div ng-messages="projectForm.budget.$error">
-					          <div ng-message="required">A vaild estimate is required.</div>
-					        </div>
-						</md-input-container>
-				        
-				        <md-input-container class="md-block">
-					        <label>Comments</label>
-					        <textarea required name="comments" maxlength="500" rows="6" md-select-on-focus ng-model="project.comments"></textarea>
-					        <div ng-messages="projectForm.comments.$error">
-					          <div ng-message="required">A Comment is required and appreciated if detailed.</div>
-					        </div>
-				        </md-input-container>
-					      
-					    <p style='width: 100%; text-align: center;'><md-button class="md-raised md-primary">SUBMIT</md-button></p>
-
-					</form>
-				
-				</div>			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			</div>		
-        </md-content>
-      </md-tab>
-    </md-tabs>
-  </md-content>
-
-<footer>
-	
-REAOSNS
-
-</footer>
-
-</div>
-
-
-  
-  <!-- Angular Material requires Angular.js Libraries -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
-
-  <!-- Angular Material Library -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-  <script src="sass_css_js/script.js"></script>
-  
-
-  <!-- Your application bootstrap  -->
-  <script type="text/javascript">    
-    /**
-     * You must include the dependency on 'ngMaterial' 
-     */
-    angular.module('BlankApp', ['ngMaterial']);
-
-  </script>
-  
-</body>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="robots" content="NOODP"/>
+    <meta name="googlebot" content="NOODP"/>
+    <meta name="description" content="Stand Bright Studios is an animation studio that can provide a multitude of services within the industry. Feel free to contact the team or partake in our newsletter and start the conversation at hello@standbrightstudios.com!".>
+    <meta name="keywords" content="Stand, Bright, Studios, person, StandBrightStudios, What, We, Do, The, Team, Contact, Us, Newsletter, hello@standbrightstudios.com, Company"/>
+    <meta name="author" content="Carlos Marra".>
+
+    <title>Stand Bright Studios</title>
+
+    <!-- for FF, Chrome, Opera -->
+    <link rel="icon" type="image/png" href="images/logo.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
+    
+    <!---custom CSS and JS-->
+    <link rel="stylesheet" href="bootnstyles.min.css" type="text/css" charset="utf-8">
+
+</head>
+
+<body>
+    <div class="template_navbar">
+        <div class="template_navbar_mask">
+            <div class="template_navbar_box">
+                <img alt="logo" src="images/standbrightstudios.png">
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="template_front">
+        <div class="template_front_left"></div>
+            <div class="template_front_divs">            
+                <div class="template_front_rectangles">
+                    <div class="masked_imaging">
+                        <img  class="masked_image" id="masked_image" alt="sbs_icon" src="images/video_logo.png" />
+                    </div>
+                    <iframe class="revealed_video hide" id="revealed_video" frameborder="0" height="540" width="960"  src="https://player.vimeo.com/video/128739721?color=ff005a&title=0&byline=0&portrait=0"></iframe>
+                </div>
+            </div>
+        <div class="template_front_right"></div>
+    </div>
+    
+    <div class="template_blurb">
+        <div class="template_blurb_mask">
+            <div class="template_blurb_logo">
+                <div class="template_blurb_center">   
+                    <video class="flameon" width="100" height="100" autoplay muted loop>
+                        <source src="videos/flame.mp4" type="video/mp4">
+                    </video>                 
+                </div>
+            </div>
+
+            <p class="template_blurb_text"><br>
+            We partner with clients to create stunning animations. We do our best to take ideas and
+            bring them to the next level.</p>
+
+            <p class="template_blurb_text">Our award-winning designers, animators and story tellers make this
+            happen.</p>
+
+            <p class="template_blurb_text">Let’s make a difference together and get people excited!</p>
+
+            <p class="template_blurb_text2"><br>
+            <i>“When you are ready to work with us, we will be here for you.” </i> - Sidney S. Marra
+            CEO</p>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="template_slide3">
+        <p class="template_slide3_text">VIDEO PRODUCTION</p>
+        <div class="template_slide3_concept_body">
+            <div class="template_slide3_picture">
+                <div class="template_slide3_concept_placehoder">
+                    <div class="bordering">
+                        <video class="template_slide3_video" width="960" height="540" autoplay muted loop>
+                            <source src="videos/v_prod.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="template_slide3_information">                       
+                <p class="template_slide3_intro">CREATIVE MARKETING</p>
+                <p class="template_slide3_middle">Capture the attention of your audience! Videos are a great way to spread your message across all social media.</p>
+                <div class="template_slide3_list">
+                    <p class="template_slide3_list_title">ANIMATION SERVICES</p>
+                    <p class="template_slide3_list_content">Scriptwriting. Voice-Over. Styleframes. Storyboards. Animation. Music.</p>
+                </div>
+                <div class="template_slide3_list">
+                    <p class="template_slide3_list_title">LIVE-ACTION SERVICES</p>
+                    <p class="template_slide3_list_content">Scriptwriting. Casting. Shooting. Editing. Visual Effects. Graphics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+       
+    <div class="template_icons">
+        <div class="template_icons_process">
+            <ul class="template_icons_steps">
+                <li class="template_icons_icons">                  
+                    <label class="template_icons_step_stones">CONCEPT</label><br>
+                    <figure>
+                        <img class="template_icons_type1" alt="process" src="images/concept.png">      
+                        <figcaption><br> Have an idea? Great! <br> Create a script.  </figcaption>
+                    </figure>
+                </li>
+                <li class="template_icons_icons">                  
+                    <label class="template_icons_step_stones">STYLE</label><br>
+                    <figure>
+                        <img class="template_icons_type1" alt="process" src="images/style.png">        
+                        <figcaption><br>A range of styles are sent based on your preference.</figcaption>
+                    </figure>
+                </li>
+                <li class="template_icons_icons">                  
+                    <label class="template_icons_step_stones">STORYBOARD</label><br>
+                    <figure>
+                        <img class="template_icons_type2" alt="process" src="images/storyboard.png">       
+                        <figcaption><br>Creating storyboards is the best way to visually plan out the entire video </figcaption>
+                    </figure>
+                </li>
+                <li class="template_icons_icons nope">                 
+                    <label class="template_icons_step_stones">PRODUCTION</label><br>
+                    <figure>
+                        <img class="template_icons_type2" alt="process" src="images/production.png">       
+                        <figcaption><br>Once the previous steps are approved, we take action.</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        <div class="clear"></div>   
+        </div>
+    </div>
+    <div class="clear"></div>
+
+    <div class="template_contact">
+        <p class="template_contact_text">CONTACT US</p>
+        <form action="server.php" id="contact_submit" method="POST">
+            <div class="template_contact_row">
+                <ul class="template_contact_real">
+                    <li class="template_contact_dropdown_section">
+                        <label class="template_contact_categories">NAME</label><br>
+                        <input class="template_contact_menus" id="person_name" name="person_name" type="text" placeholder="Bruce Wayne">                               
+                    </li>
+
+                    <li class="template_contact_dropdown_section">
+                        <label class="template_contact_categories">COMPANY</label><br>
+                        <input class="template_contact_menus" id="company_name" name="company_name" type="text" placeholder="Wayne Industries">                               
+                    </li>
+
+                    <li class="template_contact_dropdown_section">
+                        <label class="template_contact_categories">PHONE NUMBER</label><br>
+                        <input class="template_contact_menus" id="company_number" name="company_number" type="text" placeholder="800-228-6267">                               
+                    </li>
+                </ul>     
+                <div class="clear"></div>                           
+            </div>
+            <div class="template_contact_row">
+                <ul class="template_contact_real">
+                    <li class="template_contact_dropdown_section">
+                        <label class="template_contact_categories">EMAIL</label><br>
+                        <input class="template_contact_menus" id="company_email" name="company_email" type="text" placeholder="bruce@wayne.com">                                                            
+                    </li>
+
+                    <li class="template_contact_dropdown_section">
+                        <label class="template_contact_categories">BUDGET</label><br>
+                        <input class="template_contact_menus" id="company_budget" name="company_budget" type="text" placeholder="$3600">                               
+                    </li>
+
+                    <li class="template_contact_dropdown_section">
+                        <label class="template_contact_categories">HOW YOU FOUND US</label><br>
+                        <select class="template_contact_menus" id="company_know" name="company_know" type="text">                               
+                            <option value="" selected>Select your option</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Social Media">Aimee (EU contact)</option>
+                            <option value="Social Media">Rachel (NA contact)</option>
+                        </select>    
+                    </li>
+                </ul>   
+                <div class="clear"></div>                                           
+            </div>
+            <div class="template_contact_row">
+                <ul class="template_contact_real">
+                    <li class="template_contact_dropdown_additional">
+                        <label class="template_contact_categories external">ADDITIONAL NOTES<br>
+                        <textarea class="template_contact_text2 template_contact_textarea" id="company_details" name="company_details" placeholder="Example Details: artistic style, video content, timeline, etc." type="text"></textarea> 
+                    </li>
+                    <li class="template_contact_dropdown_button">
+                        <button class="template_contact_submit" type="submit" form="contact_submit" id="submit" name="submit">SUBMIT</button>
+                    </li>
+                </ul>  
+                <div class="clear"></div>                     
+            </div>
+        </form>
+    </div>
+
+
+    <div class="template_newsletter">
+        <form action="server.php" id="news_submit" method="POST">
+            <div class="template_newsletter_content">
+                <p class="template_newsletter_text">Subscribe to our Newsletter!</p>
+                <div class="template_newsletter_news">
+                    <input class="template_newsletter_info_email" type="text" id="mail" name="mail" placeholder="your@email.com"/>
+                    <button class="template_newsletter_info_sub"  type="submit" form="news_submit" id="submit_news" name="submit_news">SUBMIT</button>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="template_footer"> 
+        <div class="template_footer_complete">
+            <div class="template_footer_footer">
+                <p class="template_footer_text">HELLO@STANDBRIGHTSTUDIOS.COM</p>
+                <p class="template_footer_text">516-724-4456 | BROOKLYN, NY</p>
+            </div>
+            <div class="template_footer_row">
+                <div class="template_footer_footer_icons">
+                    <a href="https://www.facebook.com/pages/Stand-Bright-Studios/1568394150088377?fref=ts"><img class="template_footer_social_icons" alt="socials" src="images/facebook.png"/></a>
+                    <a href="https://twitter.com/Stand_Brightly"><img class="template_footer_social_icons" alt="socials" src="images/twitter.png"/></a>
+                    <a href="http://standbrightstudios.tumblr.com/"><img class="template_footer_social_icons" alt="socials" src="images/tumblr.png"/></a> 
+                    <img class="template_footer_social_icons" alt="socials" src="images/instagram.png"/>
+                    <img class="template_footer_social_icons" alt="socials" src="images/vimeo.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="complete.min.js"></script>
+    <script src="malsup.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
 </html>
