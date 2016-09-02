@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='app'>
 
     <head>
         <meta charset="utf-8"/>
@@ -20,107 +20,84 @@
         <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
 
         <!---custom CSS and JS-->
-        
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
         <link rel="stylesheet" href="scss-css/styles.css">
     </head>
 
-    <body>
+    <body ng-controller="mainController">
         <div class="whole_container">
-
-
             <img class='header_logo' src="images/sbslogo.png">
 
-<!--             <h1 class='header_text'>STAND BRIGHT STUDIOS</h1>
- -->
             <div class="info_container">
             
                 <div class="demo_video">
                     <iframe frameborder="0" src="https://player.vimeo.com/video/128739721?color=ff005a&title=0&byline=0&portrait=0"></iframe>
                 </div>
 
-                <div class="quote">     
-                    <img class="logo_animated"  src="images/logo.png">
-                    <p class='quote_text'>We partner with clients to create stunning animations. We do our best to take ideas and bring them to the next level. Our award-winning designers, animators and story tellers make this happen. Let’s make a difference together and get people excited!</p>
-                    <p class='quote_text ceo'><i>“When you are ready to work with us, we will be here for you.” </i> - Sidney S. Marra CEO</p>
-                </div>
-
-
-
                 <div class='animation_types'>
-
                     <div class="row">
-                        
-                        <div class="styles">
+                        <div class="styles" ng-repeat="styles in downstyle">
+                            <div class="images" style="{{styles.path}}"></div>
                             <div class="dropdown"></div>
-                            <p>2D / 3D</p>
-                        </div>
-                        
-                        <div class="styles">
-                            <div class="dropdown"></div>
-                            <p>Motion<br>Graphics</p>
-                        </div>
-                        
-                        <div class="styles">
-                            <div class="dropdown"></div>
-                            <p>TV</p>
-                        </div>                    
+                            <p>{{styles.text}}</p>
+                            <img class='pencil_head hide' src="images/mountain.png">
+                        </div> 
                         <div class="clear"></div>
                     </div>  
 
                     <div class="row">
-                        
-                        <div class="styles">
+                        <div class="styles" ng-repeat="styles in upstyle">
+                            <div class="images" style="{{styles.path}}"></div>
                             <div class="dropup"></div>
-                            <p>Music</p>
-                        </div>
-                        
-                        <div class="styles">
-                            <div class="dropup"></div>
-                            <p>Live Action</p>
-                        </div>
-                        
-                        <div class="styles">
-                            <div class="dropup"></div>
-                            <p>Print</p>
-                        </div>                    
+                            <p>{{styles.text}}</p>
+                            <img class='pencil_head hide' src="images/mountain.png">
+                        </div> 
                         <div class="clear"></div>
                     </div>  
-    
                 </div>
+
+
+
+
 
 
                 <div class="planning">
-                    
-                    <!-- z 10 -->
-                    <div class="whole_slide">
-                        <img src="images/concept_overlay.png">
-                        <div class="meat_slide">
-                        <img class="flame_left"  src="images/pinkflame.png">
-                        <img class="flame_right"  src="images/pinkflame.png">
- 
-                        <h1>Concept</h1>
-                        <p>Come up with a message that will captivate your audience.</p>
+                    <div class="line-three">
+                        <div class="whole_slide {{slide.hide}}" ng-repeat="slide in slides">
+                            <div class="slide_images" style="{{slide.path}}"></div>
+                            <div class="meat_slide">
+                                <h1>{{slide.h1}}</h1>
+                                <p>{{slide.p}}</p>
+                            </div>
                         </div>
-
                     </div>
 
-
-                    <!-- z 100 -->
                     <div class="buttons"> 
-                        <div class="blue_buttons active"></div>
-                        <div class="blue_buttons"></div>
-                        <div class="blue_buttons"></div>
+                        <div class="blue_buttons {{slide.active}}" ng-repeat="slide in slides"></div>
                     </div>
-
                 </div>
 
+                <div class="about">
+
+
+
+
+
+                        <div class="people moving">
+                            <img src="images/{{employee.path}}.png" ng-repeat="employee in employees1">
+                        </div>
+                    
+                </div>
 
                    
                 <div class="contact_us">
              
                     <div class="contact_title">
-                        <h1>Contact US</h1>
+                        <h1>Contact Us</h1>
                     </div>
+
+                    <img class='gradient_flame' src="images/logoflame-solo-pink.png">
+
 
                     <form action="server.php" id="contact_submit" method="POST" class='ajax'>
                     
@@ -159,25 +136,26 @@
                     </form>
 
                     <div class="clear"></div>
-                    
-                    <div class="template_footer_footer">
-                        <p class="template_footer_text">HELLO@STANDBRIGHTSTUDIOS.COM</p>
-                        <p class="template_footer_text">516-724-4456 | BROOKLYN, NY</p>
-                        <div class="template_footer_footer_icons">
-                            <a href="https://www.facebook.com/pages/Stand-Bright-Studios/1568394150088377?fref=ts"><img class="template_footer_social_icons" alt="socials" src="images/facebook.png"/></a>
-                            <a href="https://twitter.com/Stand_Brightly"><img width='100' height='100' class="template_footer_social_icons" alt="socials" src="images/twitter.png"/></a>
-                            <a href="http://standbrightstudios.tumblr.com/"><img width='100' height='100' class="template_footer_social_icons" alt="socials" src="images/tumblr.png"/></a> 
-                            <img width='100' height='100' class="template_footer_social_icons" alt="socials" src="images/instagram.png"/>
-                            <img width='100' height='100' class="template_footer_social_icons" alt="socials" src="images/vimeo.png"/>
-                        </div>
-                    </div>
 
                 </div>
+            
+                <div class="footer">
+                    <div class="info">
+                        <p>HELLO@STANDBRIGHTSTUDIOS.COM | 516-724-4457 | BROOKLYN, NY</p>
+                    </div>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/pages/Stand-Bright-Studios/1568394150088377?fref=ts"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com/Stand_Brightly"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </div>
+                </div>
+
             </div>
+
         </div>
         
         <div class="clear"></div>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/complete.min.js"></script>
     </body>
