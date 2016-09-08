@@ -1,91 +1,43 @@
 <?php
 
-if(!isset($_POST['person_name'], $_POST['company_name'], $_POST['company_number'], $_POST['company_email'], $_POST['company_details'])) {
-    print_r($_POST);
-}
+    $p_name = trim(stripslashes(htmlspecialchars($_POST['person_name']))); 
+    $c_name= trim(stripslashes(htmlspecialchars($_POST['company_name'])));          
+    $c_email = trim(stripslashes(htmlspecialchars($_POST['company_email'])));         
+    $c_phone = trim(stripslashes(htmlspecialchars($_POST['company_number'])));          
+    $c_details= trim(stripslashes(htmlspecialchars($_POST['company_details'])));  
 
-// if (isset($_POST["submit"])){
+    $emaillist = 'sidney@standbrightstudios.com, findme@carlosamarra.com';
 
-          
+    $to      = $c_email;
 
-//     $p_name = trim(stripslashes(htmlspecialchars($_POST['person_name']))); 
+    $subject = $c_name." inquired about a video.";
 
-//     $c_name= trim(stripslashes(htmlspecialchars($_POST['company_name'])));          
+    $message = "<html><body>";
+    $message .= "<table style='width: 300px;'>";
 
-//     $c_email = trim(stripslashes(htmlspecialchars($_POST['company_email'])));         
+    $message .= "<tr><th colspan=2 style='background-color: #57c6eb; color: white; padding: 20px; font-family:Verdana,Geneva,sans-serif; font-weight: bold; font-size: 30px;'>SBS Recipt</th></tr>";
 
-//     $c_phone = trim(stripslashes(htmlspecialchars($_POST['company_number'])));          
+    $message .= "<tr style='background-color: #CFF0FF; color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td style='padding: 10px; width: 130px;'>Contact Name</td><td>$p_name</td></tr>";
 
-//     $c_details= trim(stripslashes(htmlspecialchars($_POST['company_details'])));     
+    $message .= "<tr style='color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td style='padding: 10px; width: 130px;'>Company Name</td><td>$c_name</td></tr>";
 
+    $message .= "<tr style='background-color: #CFF0FF; color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td style='padding: 10px; width: 130px;'>Company Email</td><td>$c_email</td></tr>";
 
+    $message .= "<tr style='color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td style='padding: 10px; width: 130px;'>Company Phone</td><td>$c_phone</td></tr>";
 
-//     $emaillist = 'sidney@standbrightstudios.com, findme@carlosamarra.com';
+    $message .= "<tr style='background-color: #CFF0FF; color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td colspan=2 style='padding: 10px;'>Additional Details:</td></tr>";
 
-    
+    $message .= "<tr style='background-color: #CFF0FF; color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td colspan=2 style='padding: 10px;'>$c_details</td></tr>";
 
-//                 $to      = $c_email;
+    $message .= "<tr><th colspan=2 style='background-color: #57c6eb; color: white; padding: 20px; font-family:Verdana,Geneva,sans-serif; font-weight: bold; font-size: 20px;'>Thank You For Contacting Us!</th></tr>";
 
-//                 $subject = $c_name." inquired about a video.";
+    $message .= "</table>";
+    $message .= "</body></html>";
 
-//                 $message = "<html><body>";
+    $headers = "From: hello@standbrightstudios.com\r\n";
+    $headers .= "Bcc: $emaillist\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-//                 $message .= "<table>";
-
-//                 $message .= "<tr><th colspan=2 style='background-color: #405159; color: #CFF0FF; padding: 20px; font-family:Verdana,Geneva,sans-serif; font-weight: bold; font-size: 30px;'>Stand Bright Studios Recipt</th></tr>";
-
-//                 $message .= "<tr style='background-color: #CFF0FF; color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td style='padding: 10px;'>Contact Name</td><td>$p_name</td></tr>";
-
-//                 $message .= "<tr style='color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td style='padding: 10px;'>Phone Number</td><td>$c_phone</td></tr>";
-
-//                 $message .= "<tr style='background-color: #CFF0FF; color: #405159; font-family:Verdana,Geneva,sans-serif; font-weight: bold;'><td style='padding: 10px;'>Additional Details</td><td style='max-width:200px!important;'>$c_details</td></tr>";
-
-//                 $message .= "<tr><th colspan=2 style='background-color: #CFF0FF; color: #405159; padding: 20px; font-family:Verdana,Geneva,sans-serif; font-weight: bold; font-size: 20px;'>Thank You For Contacting Us!</th></tr>";
-
-//                 $message .= "</table>";
-
-//                 $message .= "</body></html>";
-
-
-
-//                 $headers = "From: hello@standbrightstudios.com\r\n";
-
-//                 $headers .= "Bcc: $emaillist\r\n";
-
-//                 $headers .= "MIME-Version: 1.0\r\n";
-
-//                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-
-
-
-
-                
-
-//                 mail($to, $subject, $message, $headers);
-
-                
-
-//                 echo '<style type="text/css">
-
-//                 html {
-
-//                     display: none;
-
-//                 }
-
-//                 </style>';
-
-                                
-
-//                 echo '<script language="javascript">';
-
-//                 echo 'window.location.href="index.html";';
-
-//                 echo '</script>';
-
-    
-
-// }
-
+    mail($to, $subject, $message, $headers);
 ?>

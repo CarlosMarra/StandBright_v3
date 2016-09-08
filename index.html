@@ -27,6 +27,7 @@
     <body ng-controller="mainController">
         <div class="whole_container">
             <img class='header_logo' src="images/sbslogo.png">
+            <img class='header_logo_mobile' src="images/header_logo_mobile.png">
 
             <div class="info_container">
             
@@ -55,7 +56,7 @@
 
                 <div class="planning">
                     <div class="line-three">
-                        <div class="whole_slide {{slide.hide}}" ng-repeat="slide in slides">
+                        <div class="whole_slide" style="{{slide.index}}" ng-repeat="slide in slides">
                             <div class="slide_images" style="{{slide.path}}"></div>
                             <div class="meat_slide">
                                 <h1>{{slide.h1}}</h1>
@@ -75,13 +76,30 @@
                                 <p>Press play and enjoy. Share what y​ou love with the world!</p>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="buttons"> 
                         <div class="blue_buttons {{slide.active}}" ng-repeat="slide in slides"></div>
                         <div class="blue_buttons"></div>
+                    </div>
+                </div>
 
+                <div class="planning_mobile">
+                    <h1>Process</h1>
+
+                    <div class="steps">
+                        <h2>Concept</h2>
+                        <p>Come up with a message that will captivate your audience.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h2>Storyboard</h2>
+                        <p>Lay-out your story. This will help us see the direction we are focused on.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h2>Video</h2>
+                        <p>Press play and enjoy. Share what y​ou love with the world!</p>
                     </div>
                 </div>
 

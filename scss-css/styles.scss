@@ -30,14 +30,31 @@ body {
     }
  
     .header_logo{
-        width: 520px;
-        margin: -50px calc(50% - 260px) 20px;
-    
+        width: 518px;
+        margin: -50px calc(50% - 245px) 20px;
+
         @media screen and (max-width: 959px) {
-            margin: 10px calc(50% - 260px) 20px;
+            margin: 10px calc(50% - 245px) 20px;
+            
+        }
+        
+        @media screen and (max-width: 599px) {
+            display: none;
+        }
+    }
+
+    .header_logo_mobile{
+        width: 120px;
+        padding: 10px calc(50% - 60px) 20px;
+        display: none;
+
+        @media screen and (max-width: 599px) {
+           
+            display: block;
         }
  
     }
+
 
     .header_text{
         text-align:center;
@@ -83,7 +100,7 @@ body {
         }
 
         @media screen and (max-width: 959px) {
-            width: 100vw;
+            width: 100%;
             margin: 0px;
         }
 
@@ -98,7 +115,7 @@ body {
         
             @media screen and (max-width: 959px) {
                 width: 100%;
-                height: 57vw;
+                height: 56vw;
             }
 
             iframe{
@@ -145,13 +162,13 @@ body {
                     }
 
                     @media screen and (max-width: 959px) {
-                        width: 33.33333vw;
-                        height: 33.33333vw;
+                        width: calc(33.33333vw - 6px);
+                        height:calc(33.33333vw - 6px);
                     }
 
                     @media screen and (max-width: 599px) {
-                        width: 50vw;
-                        height: 50vw;
+                        width: calc(50vw - 9px);
+                        height: calc(50vw - 9px);
                     }
 
                     .images{
@@ -297,13 +314,13 @@ body {
                        height: 0px;
                       }
                       100% {
-                       height: 33.33333vw;
+                       height: calc(33.33333vw - 6px);
                       }
                     }
 
                     @keyframes depulse_959 {
                       0% {
-                       height: 33.33333vw;
+                       height: calc(33.33333vw - 6px);
                       }
                       100% {
                        height: 0px;
@@ -315,13 +332,13 @@ body {
                        height: 0px;
                       }
                       100% {
-                       height: 50vw;
+                       height: calc(50vw - 9px);
                       }
                     }
 
                     @keyframes depulse_599 {
                       0% {
-                       height: 50vw;
+                       height: calc(50vw - 9px);
                       }
                       100% {
                        height: 0px;
@@ -363,9 +380,13 @@ body {
                 height: 520px;
             }  
 
+            @media screen and (max-width: 959px) {
+                display:none;
+            } 
+
             .whole_slide{
                 position: absolute;
-                z-index: 10;
+                z-index: 100;
                 width: 100%;
                 height: 100%;
 
@@ -428,7 +449,7 @@ body {
                 bottom: 0;
                 left: 50%;
                 transform: translate(-50%, 0%);
-                z-index: 100;
+                z-index: 300;
 
                 .blue_buttons{
                     width: 20px;
@@ -445,6 +466,45 @@ body {
                     background: #6bcdea;
                 }
             }
+        }
+
+        .planning_mobile{
+            background: rgba(0, 3, 23, .95);
+            padding: 24px 0px 0px;
+            display: none;
+
+            @media screen and (max-width: 959px) {
+                display: block;
+            } 
+
+            h1, h2, p{
+            margin: 0px;
+            color: white;
+            }
+
+            h1{
+                margin-bottom: 20px;
+                text-align: center;
+                font-size: 48px;
+            }
+
+            .steps{
+                padding: 20px 0px;
+                margin: 0 auto;
+            }
+
+            h2, p{
+                margin: 5px 30px;
+            }
+
+            h2{
+                font-size: 30px;
+            }
+
+            p{
+                font-size: 18px;
+            }
+
         }
 
         .about{
@@ -531,10 +591,10 @@ body {
                     }
 
                     .pinkify {
-                        -webkit-animation: pulse2 .25s forwards;
-                        -moz-animation:    pulse2 .25s forwards;
-                        -o-animation:      pulse2 .25s forwards;
-                        animation:         pulse2 .25s forwards;                    
+                        -webkit-animation: pulse2 .1s forwards;
+                        -moz-animation:    pulse2 .1s forwards;
+                        -o-animation:      pulse2 .1s forwards;
+                        animation:         pulse2 .1s forwards;                    
                     }
 
                     @keyframes pulse2 {
@@ -604,7 +664,7 @@ body {
                             margin: -10px 0px 0px;
                             font-size: 24px;
                             color: #f4d419;
-                        }
+                        } 
                     }
                 }
             }
@@ -757,11 +817,12 @@ body {
                         font-size: 16px;
                         font-weight: bold;
                         outline: none;
-                        width: 100px;
+                        width: 120px;
                         margin: 10px 20px;
-                        padding: 10px 0px 5px;
+                        padding: 13px 0px 9px;
                         border-radius: 5px;
                         float: right;
+                        cursor: pointer;
                     }
                 }
             }
@@ -848,3 +909,17 @@ body {
 .error{
     color: red;
 }
+
+.waiting_button{
+    cursor: progress!important;
+}
+
+.loading_button{
+    background: #ebdf57!important;
+    cursor: progress!important;
+}
+
+.success_button{
+    background: #57eb87!important;
+    cursor: default!important;
+} 

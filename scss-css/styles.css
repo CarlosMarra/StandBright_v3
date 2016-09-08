@@ -23,11 +23,21 @@ body {
     .whole_container {
       padding: 0px 0px; } }
   .whole_container .header_logo {
-    width: 520px;
-    margin: -50px calc(50% - 260px) 20px; }
+    width: 518px;
+    margin: -50px calc(50% - 262px) 20px; }
     @media screen and (max-width: 959px) {
       .whole_container .header_logo {
-        margin: 10px calc(50% - 260px) 20px; } }
+        margin: 10px calc(50% - 262px) 20px; } }
+    @media screen and (max-width: 599px) {
+      .whole_container .header_logo {
+        display: none; } }
+  .whole_container .header_logo_mobile {
+    width: 120px;
+    padding: 10px calc(50% - 60px) 20px;
+    display: none; }
+    @media screen and (max-width: 599px) {
+      .whole_container .header_logo_mobile {
+        display: block; } }
   .whole_container .header_text {
     text-align: center;
     margin: -10px 0px;
@@ -66,7 +76,7 @@ body {
         margin: 0 calc(50% - 465px); } }
     @media screen and (max-width: 959px) {
       .whole_container .info_container {
-        width: 100vw;
+        width: 100%;
         margin: 0px; } }
     .whole_container .info_container .demo_video {
       width: 1080px;
@@ -78,7 +88,7 @@ body {
       @media screen and (max-width: 959px) {
         .whole_container .info_container .demo_video {
           width: 100%;
-          height: 57vw; } }
+          height: 56vw; } }
       .whole_container .info_container .demo_video iframe {
         width: 100%;
         height: 100%; }
@@ -111,12 +121,12 @@ body {
             height: 310px; } }
         @media screen and (max-width: 959px) {
           .whole_container .info_container .animation_types .row .styles {
-            width: 33.33333vw;
-            height: 33.33333vw; } }
+            width: calc(33.33333vw - 6px);
+            height: calc(33.33333vw - 6px); } }
         @media screen and (max-width: 599px) {
           .whole_container .info_container .animation_types .row .styles {
-            width: 50vw;
-            height: 50vw; } }
+            width: calc(50vw - 9px);
+            height: calc(50vw - 9px); } }
         .whole_container .info_container .animation_types .row .styles .images {
           width: 100%;
           height: 100%;
@@ -217,20 +227,20 @@ body {
   0% {
     height: 0px; }
   100% {
-    height: 33.33333vw; } }
+    height: calc(33.33333vw - 6px); } }
 @keyframes depulse_959 {
   0% {
-    height: 33.33333vw; }
+    height: calc(33.33333vw - 6px); }
   100% {
     height: 0px; } }
 @keyframes pulse_599 {
   0% {
     height: 0px; }
   100% {
-    height: 50vw; } }
+    height: calc(50vw - 9px); } }
 @keyframes depulse_599 {
   0% {
-    height: 50vw; }
+    height: calc(50vw - 9px); }
   100% {
     height: 0px; } }
         .whole_container .info_container .animation_types .row .styles p {
@@ -256,9 +266,12 @@ body {
       @media screen and (max-width: 1359px) {
         .whole_container .info_container .planning {
           height: 520px; } }
+      @media screen and (max-width: 959px) {
+        .whole_container .info_container .planning {
+          display: none; } }
       .whole_container .info_container .planning .whole_slide {
         position: absolute;
-        z-index: 10;
+        z-index: 100;
         width: 100%;
         height: 100%; }
         .whole_container .info_container .planning .whole_slide .slide_images {
@@ -300,7 +313,7 @@ body {
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 0%);
-        z-index: 100; }
+        z-index: 300; }
         .whole_container .info_container .planning .buttons .blue_buttons {
           width: 20px;
           height: 20px;
@@ -312,6 +325,29 @@ body {
           cursor: pointer; }
         .whole_container .info_container .planning .buttons .active {
           background: #6bcdea; }
+    .whole_container .info_container .planning_mobile {
+      background: rgba(0, 3, 23, 0.95);
+      padding: 24px 0px 0px;
+      display: none; }
+      @media screen and (max-width: 959px) {
+        .whole_container .info_container .planning_mobile {
+          display: block; } }
+      .whole_container .info_container .planning_mobile h1, .whole_container .info_container .planning_mobile h2, .whole_container .info_container .planning_mobile p {
+        margin: 0px;
+        color: white; }
+      .whole_container .info_container .planning_mobile h1 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 48px; }
+      .whole_container .info_container .planning_mobile .steps {
+        padding: 20px 0px;
+        margin: 0 auto; }
+      .whole_container .info_container .planning_mobile h2, .whole_container .info_container .planning_mobile p {
+        margin: 5px 30px; }
+      .whole_container .info_container .planning_mobile h2 {
+        font-size: 30px; }
+      .whole_container .info_container .planning_mobile p {
+        font-size: 18px; }
     .whole_container .info_container .about {
       width: 100%;
       height: 270px;
@@ -380,10 +416,10 @@ body {
             background: rgba(0, 0, 0, 0.75);
             z-index: 50; }
           .whole_container .info_container .about .people .humans .pinkify {
-            -webkit-animation: pulse2 .25s forwards;
-            -moz-animation: pulse2 .25s forwards;
-            -o-animation: pulse2 .25s forwards;
-            animation: pulse2 .25s forwards; }
+            -webkit-animation: pulse2 .1s forwards;
+            -moz-animation: pulse2 .1s forwards;
+            -o-animation: pulse2 .1s forwards;
+            animation: pulse2 .1s forwards; }
 @keyframes pulse2 {
   0% {
     height: 0px; }
@@ -534,11 +570,12 @@ body {
             font-size: 16px;
             font-weight: bold;
             outline: none;
-            width: 100px;
+            width: 120px;
             margin: 10px 20px;
-            padding: 10px 0px 5px;
+            padding: 13px 0px 9px;
             border-radius: 5px;
-            float: right; }
+            float: right;
+            cursor: pointer; }
     .whole_container .info_container .footer {
       background: rgba(0, 3, 23, 0.95);
       position: relative;
@@ -594,5 +631,16 @@ body {
 
 .error {
   color: red; }
+
+.waiting_button {
+  cursor: progress !important; }
+
+.loading_button {
+  background: #ebdf57 !important;
+  cursor: progress !important; }
+
+.success_button {
+  background: #57eb87 !important;
+  cursor: default !important; }
 
 /*# sourceMappingURL=styles.css.map */
