@@ -20,11 +20,8 @@
         <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
 
         <!---custom CSS and JS-->
-<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
 
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
         <link rel="stylesheet" href="scss-css/styles.css">
     </head>
@@ -43,14 +40,14 @@
                 <div class='animation_types'>
                     <div class="row">
                         <div class="styles" ng-repeat="styles in downstyle">
-                            <div class="images" style="{{styles.path}}"></div>
+                            <div class="images" ng-attr-style="{{styles.path}}"></div>
                             <div class="dropdown"></div>
                             <p>{{styles.text}}</p>
                             <img class='pencil_head hide' src="images/mountain.png">
                         </div> 
 
                         <div class="styles" ng-repeat="styles in upstyle">
-                            <div class="images" style="{{styles.path}}"></div>
+                            <div class="images" ng-attr-style="{{styles.path}}"></div>
                             <div class="dropup"></div>
                             <p>{{styles.text}}</p>
                             <img class='pencil_head hide' src="images/mountain.png">
@@ -61,8 +58,8 @@
 
                 <div class="planning">
                     <div class="line-three">
-                        <div class="whole_slide" style="{{slide.index}}" ng-repeat="slide in slides">
-                            <div class="slide_images" style="{{slide.path}}"></div>
+                        <div class="whole_slide" ng-attr-style="{{slide.index}}" ng-repeat="slide in slides">
+                            <div class="slide_images" ng-attr-style="{{slide.path}}"></div>
                             <div class="meat_slide">
                                 <h1>{{slide.h1}}</h1>
                                 <p>{{slide.p}}</p>
@@ -86,6 +83,11 @@
                     <div class="buttons"> 
                         <div class="blue_buttons {{slide.active}}" ng-repeat="slide in slides"></div>
                         <div class="blue_buttons"></div>
+                    </div>
+
+                    <div class="arrows">
+                        <div class="left"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+                        <div class="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </div>
                 </div>
 
@@ -111,7 +113,7 @@
                 <div class="about">
                     <div class="people moving">
                         <div class="humans" ng-repeat="employee in employees"> 
-                            <img src="images/{{employee.path}}.png" style='background: {{employee.color}};'>
+                            <img src="images/{{employee.path}}.png" ng-attr-style='background: {{employee.color}};'>
                             <div class="dropdown"></div>
                             <div class="text hide">   
                                 <h1>{{employee.name}}</h1>
@@ -183,7 +185,7 @@
                         <a href="https://www.instagram.com/standbrightstudios/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                     </div>
                     <div class="copy">
-                        <p>&copy; 2016</p>
+                        <p>&copy; 2016 Stand Bright Studios LLC.</p>
                     </div>
                 </div>
 
